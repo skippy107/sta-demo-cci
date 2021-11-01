@@ -1,7 +1,3 @@
-def jobname = "${JOB_NAME}"
-def JOB,branch
-(JOB,branch) = jobname.split('/')
-
 pipeline{
     agent {
       docker {
@@ -13,13 +9,13 @@ pipeline{
       stage('Test') {
         steps {
           sh 'export HOME=/home/docker; . $HOME/.profile; $HOME/runtests.sh'
-          archiveArtifacts "robot/${JOB}/results/*"
+          archiveArtifacts "robot/sta/results/*"
         }
       }
     }
     post {
       failure {
-        archiveArtifacts "${WORKSPACE}/results/*"
+        archiveArtifacts "robot/sta/results/*"
       }
     }
 
