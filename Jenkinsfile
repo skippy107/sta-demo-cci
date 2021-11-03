@@ -9,13 +9,13 @@ pipeline{
       stage('Test') {
         steps {
           sh 'export HOME=/home/docker; . $HOME/.profile; $HOME/runtests.sh'
-          archiveArtifacts "robot/sta/results/*"
+          archiveArtifacts "robot/sta4/results/*"
         }
       }
     }
     post {
       failure {
-        archiveArtifacts "robot/sta/results/*"
+        archiveArtifacts "robot/sta4/results/*"
       }
     }
 
