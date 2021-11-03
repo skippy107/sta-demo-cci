@@ -9,13 +9,15 @@ pipeline{
       stage('Test') {
         steps {
           sh 'export HOME=/home/docker; . $HOME/.profile; $HOME/runtests.sh'
-          archiveArtifacts "robot/sta4/results/*"
+          //archiveArtifacts "robot/sta4/results/*"
+          publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'robot/sta4/results', reportFiles: 'report.html', reportName: 'Test Results', reportTitles: ''])
         }
       }
     }
     post {
       failure {
-        archiveArtifacts "robot/sta4/results/*"
+        // archiveArtifacts "robot/sta4/results/*"
+        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'robot/sta4/results', reportFiles: 'report.html', reportName: 'Test Results', reportTitles: ''])
       }
     }
 
