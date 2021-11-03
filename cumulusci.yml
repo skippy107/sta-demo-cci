@@ -10,14 +10,14 @@ project:
 tasks:
     robot:
         options:
-            suites: robot/sta/tests
+            suites: robot/sta4/tests
             options:
-                outputdir: robot/sta/results
+                outputdir: robot/sta4/results
 
     robot_testdoc:
         options:
-            path: robot/sta/tests
-            output: robot/sta/doc/sta_tests.html
+            path: robot/sta4/tests
+            output: robot/sta4/doc/sta4_tests.html
 
     run_tests:
         options:
