@@ -1,8 +1,8 @@
 minimum_cumulusci_version: '3.45.0'
 project:
-    name: sta
+    name: sta-demo-cci
     package:
-        name: sta
+        name: sta-demo-cci
         api_version: '52.0'
     git:
     source_format: sfdx
@@ -10,14 +10,14 @@ project:
 tasks:
     robot:
         options:
-            suites: robot/sta4/tests
+            suites: robot/sta-demo-cci/tests
             options:
-                outputdir: robot/sta4/results
+                outputdir: robot/sta-demo-cci/results
 
     robot_testdoc:
         options:
-            path: robot/sta4/tests
-            output: robot/sta4/doc/sta4_tests.html
+            path: robot/sta-demo-cci/tests
+            output: robot/sta-demo-cci/doc/sta-demo-cci_tests.html
 
     run_tests:
         options:
