@@ -1,28 +1,14 @@
-# Salesforce / SFDX / CCI
-.cci
-.sfdx
-/src.orig
-/src
+# Ignore everything
+/*
+/*/
 
-# Python
-*.pyc
-__pycache__
-
-# Robot Framework results
-robot/*/results/
-
-# Editors
-*.sublime-project
-*.sublime-workspace
-.vscode
-.idea
-.project
-.settings
-
-# Misc
-.DS_Store
-
-# cert and org info
-_cci
-_sfdx
-certs
+# But not these files...
+!.gitignore
+!Jenkinsfile
+!cumulusci.yml
+!sfdx-project.json
+!README.md
+!/robot/
+/robot/*/results/
+!/datasets/
+!/orgs/
